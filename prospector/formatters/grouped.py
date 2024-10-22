@@ -1,4 +1,5 @@
 from collections import defaultdict
+from pathlib import Path
 
 from prospector.formatters.text import TextFormatter
 from prospector.message import Message
@@ -14,11 +15,11 @@ class GroupedFormatter(TextFormatter):
             "",
         ]
 
-        groups: dict[str, dict[int, list[Message]]] = defaultdict(lambda: defaultdict(list))
+        groups: dict[Path, dict[int, list[Message]]] = defaultdict(lambda: defaultdict(list))
 
         for message in self.messages:
             assert message.location.line is not None
-            groups[self._make_path(message.location.path)][message.location.line].append(message)
+            groups[message.location.relative_path(self.paths_relative_to)][message.location.line].append(message)
 
         for filename in sorted(groups.keys()):
             output.append(str(filename))
