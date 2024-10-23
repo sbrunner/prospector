@@ -100,7 +100,7 @@ class Prospector:
                 sys.stderr.write(str(fatal))
                 sys.exit(2)
 
-            except Exception as ex:  # pylint:disable=broad-except
+            except Exception as ex:  # pylint: disable=broad-except
                 if self.config.die_on_tool_error:
                     raise FatalProspectorException(f"Tool {toolname} failed to run.") from ex
                 loc = Location(self.config.workdir, None, None, None, None)

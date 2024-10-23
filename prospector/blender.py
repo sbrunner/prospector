@@ -56,7 +56,7 @@ def blend_line(messages: list[Message], blend_combos: Optional[list[list[tuple[s
     for blend_combo_idx, blend_list in enumerate(blend_lists):
         if len(blend_list) == 0:
             continue
-        # pylint:disable=cell-var-from-loop
+        # pylint: disable=cell-var-from-loop
         blend_list.sort(
             key=lambda msg: blend_combos[blend_combo_idx].index(
                 (msg.source, msg.code),

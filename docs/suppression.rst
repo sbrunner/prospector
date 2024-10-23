@@ -14,7 +14,7 @@ Suppressing Pylint Errors
 
 Pylint errors can be suppressed by adding a comment of the format::
 
-    # pylint:disable=redefined-builtin
+    # pylint: disable=redefined-builtin
 
 Although you can also use the numeric code (something like ``W1101``), pylint is moving towards
 using symbolic names so it is better to use the full name for the error.

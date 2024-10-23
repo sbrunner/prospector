@@ -28,6 +28,7 @@ pylint:
   options:
     extension-pkg-allow-list: mypy
   disable:
+    - useless-suppression
     - too-few-public-methods
     - missing-docstring
     - star-args

@@ -16,7 +16,7 @@ def filter_messages(filepaths: List[Path], messages: List[Message]) -> List[Mess
 
     For example:
 
-        import banana  # pylint:disable=unused-import
+        import banana  # pylint: disable=unused-import
 
     In this situation, pylint will not warn about an unused import as there is
     inline configuration to disable the warning. Pyflakes will still raise that
