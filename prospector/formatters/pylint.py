@@ -17,7 +17,7 @@ class PylintFormatter(SummaryFormatter):
         for message in sorted(self.messages):
             if cur_loc != message.location.path:
                 cur_loc = message.location.path
-                module_name = str(message.location.relative_path(self.paths_relative_to)).replace(os.path.sep, ".")
+                module_name = str(self._make_path(message.location)).replace(os.path.sep, ".")
                 module_name = re.sub(r"(\.__init__)?\.py$", "", module_name)
 
                 header = f"************* Module {module_name}"
@@ -31,7 +31,7 @@ class PylintFormatter(SummaryFormatter):
             output.append(
                 template
                 % {
-                    "path": message.location.relative_path(self.paths_relative_to),
+                    "path": self._make_path(message.location),
                     "line": message.location.line,
                     "source": message.source,
                     "code": message.code,

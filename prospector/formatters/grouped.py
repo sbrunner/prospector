@@ -19,7 +19,7 @@ class GroupedFormatter(TextFormatter):
 
         for message in self.messages:
             assert message.location.line is not None
-            groups[message.location.relative_path(self.paths_relative_to)][message.location.line].append(message)
+            groups[self._make_path(message.location)][message.location.line].append(message)
 
         for filename in sorted(groups.keys()):
             output.append(str(filename))

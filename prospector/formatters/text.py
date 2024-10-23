@@ -9,9 +9,9 @@ class TextFormatter(SummaryFormatter):
         output = []
 
         if message.location.module:
-            output.append(f"{message.location.module} ({message.location.relative_path(self.paths_relative_to)}):")
+            output.append(f"{message.location.module} ({self._make_path(message.location)}):")
         else:
-            output.append(f"{message.location.relative_path(self.paths_relative_to)}:")
+            output.append(f"{self._make_path(message.location)}:")
 
         output.append(
             "    L{}:{} {}: {} - {}".format(
