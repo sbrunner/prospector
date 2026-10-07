@@ -571,21 +571,21 @@ smmap = ">=3.0.1,<6"
 
 [[package]]
 name = "gitpython"
-version = "3.1.43"
+version = "3.2.0"
 description = "GitPython is a Python library used to interact with Git repositories"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "GitPython-3.1.43-py3-none-any.whl", hash = "sha256:eec7ec56b92aad751f9912a73404bc02ba212a23adb2c7098ee668417051a1ff"},
-    {file = "GitPython-3.1.43.tar.gz", hash = "sha256:35f314a9f878467f5453cc1fee295c3e18e52f1b99f10f6cf5b1682e968a9e7c"},
+    {file = "gitpython-3.2.0-py3-none-any.whl", hash = "sha256:bd70c5ec05cd2b797423e7eb312147d2458d3cca92085888fba2213f85905537"},
+    {file = "gitpython-3.2.0.tar.gz", hash = "sha256:fb92310af6844d96adc95ca066ed2e617c00e1dbd146a326626c81e72e18cc2e"},
 ]
 
 [package.dependencies]
 gitdb = ">=4.0.1,<5"
+typing-extensions = {version = ">=3.10.0.2", markers = "python_version < \"3.10\""}
 
 [package.extras]
-doc = ["sphinx (==4.3.2)", "sphinx-autodoc-typehints", "sphinx-rtd-theme", "sphinxcontrib-applehelp (>=1.0.2,<=1.0.4)", "sphinxcontrib-devhelp (==1.0.2)", "sphinxcontrib-htmlhelp (>=2.0.0,<=2.0.1)", "sphinxcontrib-qthelp (==1.0.3)", "sphinxcontrib-serializinghtml (==1.1.5)"]
-test = ["coverage[toml]", "ddt (>=1.1.1,!=1.4.3)", "mock", "mypy", "pre-commit", "pytest (>=7.3.1)", "pytest-cov", "pytest-instafail", "pytest-mock", "pytest-sugar", "typing-extensions"]
+test = ["basedpyright (==1.39.9)", "coverage[toml]", "ddt (>=1.1.1,!=1.4.3)", "mock", "mypy (==1.18.2)", "pre-commit", "pytest (>=7.3.1)", "pytest-cov", "pytest-instafail", "pytest-mock", "pytest-sugar", "typing-extensions"]
 
 [[package]]
 name = "identify"
